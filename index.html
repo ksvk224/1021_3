@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Font'; 
+            src: url('./Paperlogy-5Medium.ttf') format('truetype');
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Font';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(255, 179, 196);
+        }
+        .box {
+            position: relative;
+            width: 900px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: white;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+        .percent {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .percent svg {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            transform: rotate(-90deg);
+        }
+        .percent svg circle {
+            width: 150px;
+            height: 150px;
+            fill: none;
+            stroke-width: 10;
+            transform: translate(5px, 5px);
+            stroke-dasharray: 440;
+            stroke-linecap: round;
+        }
+        .percent svg circle:nth-child(1) {
+            stroke-dashoffset: 0;
+            stroke: #cccccc;
+        }
+        .photoshop circle:nth-child(2) {
+            stroke: #ff5b84;
+            animation: progressPhotoshop 1s ease forwards;
+        }
+        .aftereffects circle:nth-child(2) {
+            stroke: #ff5b84;
+            animation: progressAfterEffects 1s ease forwards;
+        }
+        .illustrator circle:nth-child(2) {
+            stroke: #ff5b84;
+            animation: progressIllustrator 1s ease forwards;
+        }
+        @keyframes progressPhotoshop {
+            0% {
+                stroke-dashoffset: 440; 
+            }
+            100% {
+                stroke-dashoffset: 88;
+            }
+        }
+        @keyframes progressAfterEffects {
+            0% {
+                stroke-dashoffset: 440; 
+            }
+            100% {
+                stroke-dashoffset: 308; 
+            }
+        }
+        @keyframes progressIllustrator {
+            0% {
+                stroke-dashoffset: 440; 
+            }
+            100% {
+                stroke-dashoffset: 352;
+            }
+        }
+        .percent .number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111;
+        }
+        .text {
+            margin-top: 10px; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="percent photoshop">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number">
+                <h2>80<span>%</span></h2>
+            </div>
+            <h2 class="text">포토샵</h2>
+        </div>
+        <div class="percent aftereffects">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number">
+                <h2>30<span>%</span></h2>
+            </div>
+            <h2 class="text">에프터이펙트</h2>
+        </div>
+        <div class="percent illustrator">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number">
+                <h2>20<span>%</span></h2>
+            </div>
+            <h2 class="text">일러스트레이터</h2>
+        </div>
+    </div>
+</body>
+</html>
